@@ -78,7 +78,6 @@ DATABASES = {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
-    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'system-monitoring',
@@ -87,7 +86,6 @@ DATABASES = {
         'HOST': '192.168.169.184',
         'PORT': '3306',
     }
-}
 }
 
 
