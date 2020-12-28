@@ -80,7 +80,7 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'system-monitoring',
+        'NAME': 'syslog',
         'USER': 'root',
         'PASSWORD': 'Admin@123',
         'HOST': '192.168.169.184',
