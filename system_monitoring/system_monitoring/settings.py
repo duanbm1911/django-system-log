@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'accounts',
+    'api'
 ]
 
 MIDDLEWARE = [
@@ -69,23 +73,29 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'system_monitoring.wsgi.application'
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'syslog',
-        'USER': 'root',
-        'PASSWORD': 'Admin@123',
-        'HOST': '192.168.169.184',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'syslog',
+    #     'USER': 'root',
+    #     'PASSWORD': 'Admin@123',
+    #     'HOST': '192.168.169.184',
+    #     'PORT': '3306',
+    # }
 }
 
 
