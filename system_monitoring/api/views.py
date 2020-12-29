@@ -19,7 +19,9 @@ def api_log_request(request):
     if request.method == 'GET':
         start_date = request.query_params.get('start_date')
         end_date = request.query_params.get('end_date')
-        model = SystemLogModel.objects.filter(date__range=[start_date,end_date])
+        device = request.query_params.get('device')
+        log = request.query_params.get('log')
+        model = SystemLogModel.objects.filter(date__range=[start_date,end_date], device__contains=device , log__contains=log)
         serializer = SystemLogSerializer(model, many=True)
         data = {'message':'OK', 'data':serializer.data}
         return Response(data, status=status.HTTP_200_OK)
